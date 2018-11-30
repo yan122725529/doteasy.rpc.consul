@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Easy.Rpc\Easy.Rpc.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Consul">
+      <Version>0.7.2.6</Version>
+    </PackageReference>
+  </ItemGroup>
+</Project>
