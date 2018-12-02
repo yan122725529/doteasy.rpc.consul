@@ -7,13 +7,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Consul;
-using Easy.Rpc.Core.Communally.Serialization;
-using Easy.Rpc.Routing;
-using Easy.Rpc.Routing.Impl;
+using DotEasy.Rpc.Core.Communally.Serialization;
+using DotEasy.Rpc.Routing;
+using DotEasy.Rpc.Routing.Impl;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace Easy.Rpc.Consul
+namespace DotEasy.Rpc.Consul
 {
     public class ConsulServiceRouteManager : ServiceRouteManagerBase, IDisposable
     {

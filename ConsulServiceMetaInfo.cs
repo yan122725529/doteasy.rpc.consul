@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using System.Net;
 
-namespace Easy.Rpc.Consul
+namespace DotEasy.Rpc.Consul
 {
     public class ConsulServiceMetaInfo
     {

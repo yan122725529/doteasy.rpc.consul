@@ -2,7 +2,7 @@ using System;
 using Consul;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Easy.Rpc.Consul
+namespace DotEasy.Rpc.Consul
 {
     public class ServiceBase
     {

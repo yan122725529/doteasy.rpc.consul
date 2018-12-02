@@ -1,9 +1,9 @@
-﻿using Easy.Rpc.Core.Communally.Serialization;
-using Easy.Rpc.Routing;
+﻿using DotEasy.Rpc.Core.Communally.Serialization;
+using DotEasy.Rpc.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace Easy.Rpc.Consul
+namespace DotEasy.Rpc.Consul
 {
     public static class RpcServiceCollectionExtensions
     {
