@@ -74,9 +74,8 @@ namespace DotEasy.Rpc.Consul
         {
             var task = new Task<IEnumerable<ServiceRoute>>(() =>
             {
-                // TODO:如果注册时间过长，会引起注册失败
 //                if (_routes != null) _connectionWait.WaitOne();
-                Console.Write("准备获取所有路由配置。");
+                _logger.LogInformation("准备获取所有路由配置。");
 
                 var allService = GetResponseData(
                     $"{_rpcOptionsConfiguration.ConsulClientConfiguration.Address}/v1/catalog/services"
@@ -110,7 +109,7 @@ namespace DotEasy.Rpc.Consul
                 {
                     new ServiceAddressDescriptor
                     {
-                        Type = "Easy.Rpc.Core.Communally.Entitys.Address.IpAddressModel",
+                        Type = "DotEasy.Rpc.Core.Communally.Entitys.Address.IpAddressModel",
                         Value = JsonConvert.SerializeObject(new Dictionary<string, dynamic>()
                         {
                             {"Ip", consulServiceMetaInfo.ServiceAddress},
@@ -151,14 +150,14 @@ namespace DotEasy.Rpc.Consul
 
         public override Task ClearAsync()
         {
-            Console.Write("准备清空所有路由配置。");
+            _logger.LogInformation("准备清空所有路由配置");
             _routes.ToList().Clear();
             return Task.FromResult(0);
         }
 
         protected override Task SetRoutesAsync(IEnumerable<ServiceRouteDescriptor> routes)
         {
-            Console.Write("准备添加服务路由。");
+            _logger.LogInformation("准备添加服务路由");
             foreach (var serviceRoute in routes)
             {
                 _consulClient.Agent.ServiceRegister(new AgentServiceRegistration
@@ -172,7 +171,7 @@ namespace DotEasy.Rpc.Consul
                 }).Wait();
             }
 
-            Console.Write("服务路由添加成功。");
+            _logger.LogInformation("服务路由添加成功");
             return GetRoutesAsync();
         }
 

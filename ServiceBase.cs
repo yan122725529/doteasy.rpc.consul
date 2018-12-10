@@ -1,6 +1,7 @@
 using System;
 using Consul;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace DotEasy.Rpc.Consul
 {
@@ -18,7 +19,6 @@ namespace DotEasy.Rpc.Consul
                 {
                     ConsulClientConfiguration = new ConsulClientConfiguration
                     {
-//                        Address = new Uri("http://192.168.153.129:8500")
                         Address = new Uri("http://127.0.0.1:8500")
                     }
                 });
@@ -40,7 +40,6 @@ namespace DotEasy.Rpc.Consul
                 {
                     ConsulClientConfiguration = new ConsulClientConfiguration
                     {
-//                        Address = new Uri("http://192.168.153.129:8500")
                         Address = new Uri(ConsulUrlAddress)
                     }
                 });
